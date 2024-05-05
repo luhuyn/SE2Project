@@ -1,0 +1,69 @@
+body{
+    box-sizing: border-box;
+}
+.formEdit {
+    max-width: 550px;
+    width: 100%;
+    background: #fff;
+    margin: auto;
+    padding: 30px;
+}
+
+.formEdit .title{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #d8bf9f;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+}
+
+.formEdit .form{
+    width: 100%;
+}
+
+.formEdit .form .inputField{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.formEdit .form .inputField label{
+    width: 200px;
+    color: #757575;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.formEdit .form .inputField .input{
+    width: 100%;
+    outline: none;
+    border: 1px solid #d5dbd9;
+    font-size: 15px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+.buttonUp{
+    display: flex;
+    align-items: center;
+}
+.buttonUp button{
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 0px;
+    background: #d8bf9f;
+    color: #131313  ;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+.buttonUp button:hover{
+    background: #131313;
+    color: white;
+}

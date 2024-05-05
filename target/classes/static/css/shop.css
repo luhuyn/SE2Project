@@ -1,0 +1,137 @@
+body{
+    background: #f4f4f4;
+}
+.wrap-background {
+    margin-bottom: 32px;
+}
+.allCard {
+    width: 80%;
+    background-color: #fff;
+    padding: 0 8px;
+}
+.title-page {
+    font-size: 28px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.products-view-grid {
+    margin: -8px -8px 0 -8px;
+    padding-bottom: 16px;
+}
+.card-product-wrapper {
+    padding: 8px;
+}
+.card-product {
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.1), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+    transition: all 0.3s;
+    overflow: hidden;
+}
+.card-product:hover {
+    box-shadow: none;
+}
+.card-title {
+   flex: 1;
+}
+.card-title {
+    font-size: 18px;
+}
+.card-title > a {
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s;
+}
+.card-title > a:hover {
+    text-decoration: none;
+    color: #d8bf9f;
+}
+.card-text {
+    font-size: 14px;
+}
+.card-bottom {
+    border-top: 1px solid #bbb;
+}
+.price {
+    font-weight: 600;
+    font-size: 18px;
+    color: #d8bf9f;
+    text-decoration: none;
+    margin-top: 16px;
+}
+.stock{
+    color: #2cc067;
+    font-size: 14px;
+}
+.btnCart a {
+    color:black;
+    background-color: transparent;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.btnCart a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+.btnCart a:hover {
+    color: black;
+    text-decoration: none;
+}
+.btnCart {
+    background-color: #d8bf9f!important;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+}
+.btnCart:hover {
+    color: white;
+    background-color: #bbbbbb!important;
+}
+.side-bar {
+    font-family: 'Open Sans', sans-serif;
+    width: 20%;
+    background-color: #fff;
+    border-right: 1px solid rgba(0,0,0,0.2);
+}
+.side-bar ul {
+    height: 100%;
+    width: 100%;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.main-cate, .sub-cate-name {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.sub-cate-name {
+    text-transform: uppercase;
+}
+.side-bar ul li {
+    width: 100%;
+    font-size: 14px;
+    line-height: 50px;
+}
+.category li a, .main-cate li a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    padding-left: 20px;
+    transition: all 0.1s;
+}
+.category li a:hover, .main-cate li a:hover  {
+    color: #d8d5cf;
+    background: #1e1e1e;
+}
+.sub-cate li a {
+    font-size: 14px;
+    padding-left: 40px;
+}
+hr {
+    height: 1px;
+    border-width: 0;
+    color: gray;
+    background-color: gray;
+    margin: 0;
+}

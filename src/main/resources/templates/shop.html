@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="_layout" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/shop.css}">
+</head>
+<body layout:fragment="content" style="background: #f4f4f4;">
+    <section class="bread-crumb">
+        <div class="container">
+            <span><a th:href="'/'">Home</a> / </span>
+            <span><a th:href="'/shop'">Shop</a> / </span>
+            [[${cateName} != null ? ${cateName} : 'All Products']]</div>
+    </section>
+    <main class="container wrap-background" style="display: flex; justify-content: space-between;">
+        <nav class="side-bar">
+            <ul class="category">
+                <li class="sub-cate-name"><a th:href="@{/shop}">All Products</a></li>
+                <li th:each="mainCat : ${ListCat}">
+                    <ul class="main-cate"  th:each="mc: ${mainCat}">
+                        <li class="sub-cate-name">
+                            <a th:href="'/shop/maincategory/'+ ${mc.key.name}">[(${mc.key.name})]</a>
+                        </li>
+                        <ul class="sub-cate">
+                            <li th:each="subCat : ${mc.value}">
+                                <a th:href="'/shop/subcategory/'+ ${subCat.id}">[(${subCat.name})]</a>
+                            </li>
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="allCard">
+            <h1 class="title-page" th:text="${cateName} != null ? ${cateName} : 'All Products'"></h1>
+            <section class="row products-view-grid ">
+                <div class="col-4 card-product-wrapper" th:each="product : ${products}">
+                    <div class="card card-product h-100 ">
+                        <div class="embed-responsive embed-responsive-1by1">
+                            <img class="card-img-top embed-responsive-item" th:alt="${product.productName}" th:src="@{${'/images/' + product.imageName}}"/>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title"><a class="stretched-link"  th:text="${product.productName}" th:href="'/shop/viewproduct/' + ${product.productId}"></a></h5>
+                            <p class="card-text text-truncate" th:text="${product.description}"></p>
+                            <div class="mt-auto card-bottom">
+                                <div class="price">
+                                    <p th:text="${product.convert(product.price)}+'₫'"></p>
+                                </div>
+                                <div class="action" style="display: flex; justify-content: space-between;">
+                                    <span class="stock"><i class="fa fa-check"></i>In stock</span>
+                                    <button class="btn btnCart" title="Add to cart">
+                                        <a th:href="@{/addToCart/{id}(id = ${product.productId})}"><i class="fas fa-cart-plus"> </i></a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script type="text/javascript">
+        document.querySelectorAll('.sidebar-submenu').forEach(e => {
+            e.querySelector('.sidebar-menu-dropdown').onclick = (event) => {
+                event.preventDefault()
+                e.querySelector('.sidebar-menu-dropdown .dropdown-icon').classList.toggle('active')
+
+                let dropdown_content = e.querySelector('.sidebar-menu-dropdown-content')
+                let dropdown_content_lis = dropdown_content.querySelectorAll('li')
+                let active_height = dropdown_content_lis[0].clientHeight * dropdown_content_lis.length
+
+                dropdown_content.classList.toggle('active')
+                dropdown_content.style.height = dropdown_content.classList.contains('active') ? active_height + 'px' : '0'
+            }
+        })
+    </script>
+</body>
+</html>

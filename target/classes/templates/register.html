@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" layout:decorate="_layout" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body layout:fragment="content" style="background: #f4f4f4">
+    <div class="container min-vh-75 d-flex justify-content-center">
+        <div class="login-container" >
+            <h2>Sign Up</h2>
+            <form th:action="@{/register}" th:object="${users}" method="post">
+                <input type="text" name="firstName" id="firstName" required placeholder="Your Firstname" >
+                <input type="text" name="lastName" id="lastName" required placeholder="Your Lastname" >
+                <input type="email" name="email" id="email" placeholder="Your Email" >
+                <input type="password"  placeholder="Password" name="password" id="password">
+                <input type="submit" value="Register">
+                <span>Already have an account? <a  href="./login.html" th:href="@{/login}" style="color: #d8bf9f">Login here</a></span>
+                <hr>
+                <h5>Sign up with other platforms</h5>
+                <div class="social-links" style="padding-bottom: 20px">
+                    <a th:href="@{/oauth2/authorization/google}"><i class="fa-brands fa-google"></i></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

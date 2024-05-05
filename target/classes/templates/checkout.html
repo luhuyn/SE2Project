@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" layout:decorate="_layout" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/checkout.css}">
+</head>
+<body layout:fragment="content" style="background: #f4f4f4">
+    <div class="container min-vh-65">
+        <section class="mt-5 mb-5">
+            <div class="row">
+                <div class="col-lg-8 checkInfo">
+                    <div class="title">Billing Details</div>
+                    <form class="form" method="get" th:action="@{/success}">
+                        <div class="inputField">
+                            <label>First Name</label>
+                            <input class="input" required type="text">
+                        </div>
+                        <div class="inputField">
+                            <label>Last Name</label>
+                            <input class="input" required type="text">
+                        </div>
+                        <div class="inputField">
+                            <label>Country:</label>
+                            <input class="input" disabled type="text" value="Viet Nam">
+<!--                            <p><strong>Viet Nam</strong></p>-->
+                        </div>
+<!--                        <p>Country: <strong>Viet Nam</strong></p>-->
+                        <div class="inputField">
+                            <label>Address (Line 1)</label>
+                            <input class="input" placeholder="House number and street name" required type="text">
+                        </div>
+                        <div class="inputField">
+                            <label>Address (Line 2)</label>
+                            <input class="input" placeholder="Apartment, suite, unit etc. (optional)" type="text">
+                        </div>
+                        <div class="inputField">
+                            <label>Postcode / ZIP</label>
+                            <input class="input" required type="number">
+                        </div>
+                        <div class="inputField">
+                            <label>Town / City</label>
+                            <input class="input" required type="text">
+                        </div>
+                        <div class="inputField">
+                            <label>Phone</label>
+                            <input class="input" required type="number">
+                        </div>
+                        <div class="inputField">
+                            <label>Email address</label>
+                            <input class="input" required type="email">
+                        </div>
+                        <div class="inputField">
+                            <label>Additional information</label>
+                            <textarea class="input" type="text"></textarea>
+                        </div>
+                        <div class="inputField" style="display: None;">
+                            <label for="amount">Amount</label>
+                            <input id="amount" name = "amount" class="input" type="text" th:value="${total}"></input>
+                        </div>
+                        <button class="btn btn-block btn-checkout" type="submit">Pay With Cash</button>
+                        <button class="btn btn-block btn-checkout-paypal" type="submit" th:formaction="@{/payment/create}">Pay With Paypal</button>
+                    </form>
+                </div>
+                <div class="col-lg-4" id="bill">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="mb-3" style="color: #d8bf9f;"><strong>The Total Amount </strong></h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    Amount Payable
+                                    <span>VND. <span th:text="${total}"></span></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                    Shipping
+                                    <span>Ha Noi</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0">
+                                    <div style="color: #d8bf9f;">
+                                        <strong>Total amount <br> (Including VAT)</strong>
+                                    </div>
+                                    <span style="color: #d8bf9f;"><strong>VND. <span th:text="${total}"></span></strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

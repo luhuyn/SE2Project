@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" layout:decorate="_layout" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body layout:fragment="content" style="background: #f4f4f4">
+    <div class="container min-vh-65">
+        <section class="mt-5 mb-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="mb-4">Cart (<span th:text="${cartCount}">2</span> items)</h5>
+                            <div class="row mb-4" th:each="item, iState : ${cart}">
+                                <div class="col-md-5 col-lg-3 col-xl-3">
+                                    <div class="mb-3 mb-md-0">
+                                        <img class="img-fluid w-100" th:alt="${item.productName}" th:src="@{${'/images/' + item.imageName}}">
+                                    </div>
+                                </div>
+                                <div class="col-md-7 col-lg-9 col-xl-9">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 th:text="${item.productName}">Blue denim shirt</h5>
+<!--                                            <p class="mb-2 text-uppercase small">Category: <span th:text="${item.category.name}"></span></p>-->
+                                    </div>
+                                    <div class="mt-5 d-flex justify-content-between align-items-center">
+                                        <a th:href="@{/cart/removeItem/{index}(index=${iState.index})}" type="button" class="card-link-secondary small text-uppercase mr-3" style="color: #d8bf9f">
+                                            <i class="fas fa-trash-alt mr-1"></i> Remove item
+                                        </a>
+                                        <strong>VND. <span th:text="${item.convert(item.price)}"></span></strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mb-4">
+                            <p class="text-danger mb-0"><i class="fas fa-info-circle mr-1"></i> Do not delay the purchase, adding items to your cart does not mean booking them.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="mb-3">The Total Amount </h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    Amount Payable
+                                    <span>VND. <span th:text="${total}"></span></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                    Shipping
+                                    <span>Ha Noi</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                                    <div>
+                                        <strong>The total amount </strong>
+                                        <strong>
+                                            <p class="mb-0">(Including VAT)</p>
+                                        </strong>
+                                    </div>
+                                    <span><strong>VND. <span th:text="${total}"></span></strong></span>
+                                </li>
+                            </ul>
+                            <a th:href="@{/checkout}" class="btn btn-block btn-checkout">Go to Checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

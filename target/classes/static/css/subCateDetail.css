@@ -1,0 +1,89 @@
+body{
+    box-sizing: border-box;
+}
+.child-sub-category-list {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 15px;
+}
+.formAdd {
+    max-width: 550px;
+    width: 100%;
+    background: #fff;
+    margin: auto;
+    margin-bottom: 30px;
+}
+.formAdd .title {
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #d8bf9f;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+}
+.detailInfoList .tb{
+    color: #444;
+    padding-left: 35px;
+    margin: 10px 0 !important;
+}
+.detailInfoList ul li {
+    list-style-type: circle;
+
+}
+.detailInfoList{
+    color: #cf0823;
+    text-align: justify;
+    line-height: 1.5em;
+    margin-top: 25px;
+    color: #008000;
+    font-family: tahoma, arial, helvetica, sans-serif;
+    line-height: 10px;
+    border: 1px dashed black;
+    border-radius: 5px;
+    width: 100%;
+}
+.content-table-proInCate {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 17px;
+    min-width: 400px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: inherit;
+}
+.content-table-proInCate thead tr {
+    background-color: #d8bf9f;
+    color: #131313;
+    text-align: center;
+    font-weight: bold;
+}
+.content-table-proInCate th,
+.content-table-proInCate td {
+    padding: 12px 15px;
+}
+.content-table-proInCate tbody tr td a button {
+    width: 70px;
+    margin-bottom: 5px;
+}
+.content-table-proInCate tbody tr td a{
+    text-decoration: none;
+}
+.content-table-proInCate tbody tr {
+    border-bottom: 3px dashed #dbcaca;
+}
+
+.content-table-proInCate tbody tr {
+    background-color: #f3f3f3;
+}
+
+.content-table-proInCate tbody tr:last-of-type {
+    border-bottom: 2px solid #d8bf9f;
+}
+
+.content-table-proInCate tbody tr.active-row {
+    color: #131313;
+}
+.pagination a {
+    color: black;
+}
